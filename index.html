@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Blockly4Nucleo</title>
+  
+  <script src="blockly_compressed.js"></script>
+  <script src="blocks_compressed.js"></script>
+  <script src="msg/js/en.js"></script>
+  
+  <script language="javascript" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+  
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!--JavaScript at end of body for optimized loading-->
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  
+  <!-- IcneFontAwesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+  
+
+  <script src = "nucleo_compressed.js"> </script>
+	
+ 
+  <!-- <style> -->
+    <!-- body { -->
+      <!-- background-color: #fff; -->
+      <!-- font-family: sans-serif; -->
+    <!-- } -->
+    <!-- h1 { -->
+      <!-- font-weight: normal; -->
+      <!-- font-size: 140%; -->
+    <!-- } -->
+  <!-- </style> -->
+</head>
+<body>
+  
+
+    <!-- Dropdown Structure -->
+	<ul id="dropdown1" class="dropdown-content">
+	  <li onClick="getval(this)" value = "0"><a href="#!">STM32F401</a></li>
+	  <li class="divider"></li>
+	  <li onClick="getval(this)" value = "1"><a href="#!">Nucleo2</a></li>
+	  <li class="divider"></li>
+	  <li onClick="getval(this)" value = "2"><a href="#!">Nucleo3</a></li>
+	</ul>
+
+	<div class="navbar-fixed">
+		<nav style="background-color: #1e90ff;">
+		  <div class="nav-wrapper">
+			<a href="/" class="brand-logo" style="padding-left:30px;">Blockly4Nucleo</a>
+			<ul class="right hide-on-med-and-down">
+			  
+			  <li><i class="fas fa-pen" style = "padding-right: 10px;"></i></li>
+			  <li><input type= "text" id="textBoard" onChange = "setBoardLetter(this)" placeholder="Path Board ex. C" style = "color: white;"></li>
+			  <li>://</li>
+			  
+			  
+			  
+			  <!-- Dropdown Trigger -->
+			  <li style="padding-left:30px"><a class="dropdown-trigger" href="#!" data-target="dropdown1" id ="dropdownID">Select Board<i class="material-icons right">arrow_drop_down</i></a></li>
+			  <!-- <li id="buttonWrite" style="padding-left:30px; padding-right:30px;"><a class="btn-floating" style="background-color: 	#90ee90;"><i class="material-icons">send</i></a></li> -->
+			  <li id="buttonWrite" style="padding-left:20px; padding-right:30px;"><a class="btn-floating btn-large" style="background-color: #90ee90;" ><i class="fas fa-play" style="padding-left:6px;"></i></a></li>
+			  <!-- <li><button class="btn waves-effect waves-light" name="action" onClick = "send(this)">Start<i class="material-icons right">send</i></button></li> -->
+			  
+			</ul>
+		  </div>
+		  
+		</nav>
+	</div>
+
+	<div class="container" style = "padding-top: 20px; padding-bottom:40px;">
+	
+		<div class="row">
+			<div class="col s7" style="color: #1e90ff"><h4>Create Your Code</h4></div>
+			<div class="col s5" style="color: #90ee90"><h4>Code Output:</h4></div>
+		</div>
+		
+		<div class="row">
+			
+				<div id="blocklyDiv" style="display: inline-block; height: 480px;" class="col s7"></div>
+				
+				<div class="col s5">
+					<textarea id="output" disabled="disabled"
+						style="display: inline-block; height: 480px; date-editor: makedown; ">
+					</textarea>
+				</div>
+			
+		</div>
+		
+	
+   </div>
+<footer class="page-footer" style="background-color: #1e90ff;" >
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Blockly4Nucleo</h5>
+                <!-- <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p> -->
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="https://developers.google.com/blockly/">Blockly</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://github.com/Perlatecnica/blockly4Nucleo">GitHub</a></li>
+                  <li><a class="grey-text text-lighten-3" href="http://www.perlatecnica.it/">perlatecnica.it</a></li>
+
+				</ul>
+              </div>
+            </div>
+          </div>
+
+        </footer>
+
+  <xml id="toolbox" style="display: none">
+    <category name="Logic" colour="%{BKY_LOGIC_HUE}">
+      <category name="If" colour="%{BKY_LOGIC_HUE}">
+        <block type="controls_if"></block>
+        <block type="controls_if">
+          <mutation else="1"></mutation>
+        </block>
+        <block type="controls_if">
+          <mutation elseif="1" else="1"></mutation>
+        </block>
+      </category>
+      <category name="Boolean" colour="%{BKY_LOGIC_HUE}">
+        <block type="logic_compare"></block>
+        <block type="logic_operation"></block>
+        <block type="logic_negate"></block>
+        <block type="logic_boolean"></block>
+        <block type="logic_null"></block>
+        <block type="logic_ternary"></block>
+      </category>
+    </category>
+	<category name="Loops" colour="%{BKY_LOOPS_HUE}">
+      <block type="controls_repeat_ext">
+        <value name="TIMES">
+          <block type="math_number">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+      </block>
+      <block type="controls_whileUntil"></block>
+      <block type="controls_for">
+        <field name="VAR">i</field>
+        <value name="FROM">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <value name="TO">
+          <block type="math_number">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+        <value name="BY">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+      </block>
+      <block type="controls_forEach"></block>
+      <block type="controls_flow_statements"></block>
+    </category>
+	<category name = "Nucleo" colour ="255">
+		<block type= "io_digitalwrite"> 
+			<value name = "stateOUT">
+				<block type="logic_boolean">
+					<field name="BOOL">false</field>
+			    </block>
+			</value>
+		</block>
+		<block type = "wait_millisecnds">
+			<value name = "SECONDS">
+				<block type="math_number">
+					<field name="NUM">0</field>
+			    </block>
+			</value>
+		</block>
+		<block type = "io_blinkled">
+			<value name = "MilliSEC">
+				<block type="math_number">
+					<field name="NUM">1000</field>
+			    </block>
+			</value>
+		</block>
+	</category>
+	
+  </xml>
+
+<script>
+    var myWorkspace = Blockly.inject('blocklyDiv',
+        {media: 'media/',
+         toolbox: document.getElementById('toolbox'),
+		 horizontalLayout: false});
+		 
+	var outputArea = document.getElementById('output');
+	<!-- outputArea.value = 'Code output:\n=================\n'; -->
+	var latestCode;
+	<!-- var select_value = document.getElementById('boardSelect').value; -->
+	<!-- alert (select_value); -->
+	
+	var boards = ["NUCLEO_F401RE","NUCLEO_F401RE", "NUCLEO_F401RE", "NUCLEO_F401RE"];
+	var boardsView = ["STM32F401","Board 2", "Board 3", "Board 4"];
+	var controlText = document.getElementById("dropdownID").innerHTML;
+	var icon = '<i class="material-icons right">arrow_drop_down</i>';
+
+
+	
+	
+	
+	function generateCodeAndLoadIntoInterpreter() {
+      // Generate Nucleo code and put it in textarea.
+      
+      latestCode = Blockly.Nucleo.workspaceToCode(myWorkspace);
+	  outputArea.value = latestCode;
+    }
+	
+	// Load the interpreter now, and upon future changes.
+    generateCodeAndLoadIntoInterpreter();
+    myWorkspace.addChangeListener(function(event) {
+      if (!(event instanceof Blockly.Events.Ui)) {
+        // Something changed. Parser needs to be reloaded.
+        generateCodeAndLoadIntoInterpreter();
+      }
+    });
+	
+	
+	$(document).ready(function(){
+	
+		$(".dropdown-trigger").dropdown();
+	
+		$.post("saveBoardSelected",
+				{
+				board: boards[0]
+				},
+				function(data,status){
+					<!-- alert("Data: " + data + "\nStatus: " + status); -->
+				});
+	
+		$("#buttonWrite").click(function(){
+		
+			if(checkPathBoard() && checkSelectedBoard() ){
+			
+				$.post("writeFile",
+					{
+					textarea: latestCode
+					},
+					function(data,status){
+						alert("Operazione avvenuta con successo!!");
+					});
+			}
+			else{
+				alert(" Controllare path Inserito e Board Selezionata !! ");
+			}
+			
+		});
+		
+		
+	});
+	
+	
+	
+	function getval(sel)
+	{
+		
+		document.getElementById("dropdownID").innerHTML = boardsView[sel.value]+ icon;
+		alert(boards[sel.value]);
+		$.post("saveBoardSelected",
+				{
+				board: boards[sel.value]
+				},
+				function(data,status){
+					<!-- alert("Data: " + data + "\nStatus: " + status); -->
+				});
+	}
+	
+	function setBoardLetter(text)
+	{
+		if(checkPathBoard(text.value) == true){
+			var path = text.value + ":\\";
+			alert (path);
+			$.post ("setBoardLetter",
+					{
+					boardPath: path
+					},
+					function (data, status){
+						<!-- alert("Data: " + data + "\nStatus: " + status); -->
+					}
+			);
+		}
+		else
+			alert("Inserire percorso Board corretto!!");
+	}
+	
+	function checkPathBoard (){
+
+		pathText = $("#textBoard").val();
+		pathText.toLowerCase();
+		
+		if (pathText == "")
+			return false;
+			
+		else if (pathText.length == 0 || pathText.length > 1 || pathText.match(/[a-z]/i) == null )
+			return false;
+			
+		else
+			return true;
+	}	
+	
+	function checkSelectedBoard (){
+		if(document.getElementById("dropdownID").innerHTML == controlText)
+		
+			return false;
+		else
+		
+			return true;
+	
+	}
+	
+	
+	
+
+</script>
+
+</body>
+</html>
