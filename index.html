@@ -43,11 +43,11 @@
 
     <!-- Dropdown Structure -->
 	<ul id="dropdown1" class="dropdown-content">
-	  <li onClick="getval(this)" value = "0"><a href="#!">STM32F401</a></li>
+	  <li onClick="getval(this)" value = "0"><a href="#!">NUCLEOF401RE</a></li>
 	  <li class="divider"></li>
-	  <li onClick="getval(this)" value = "1"><a href="#!">Nucleo2</a></li>
+	  <li onClick="getval(this)" value = "1"><a href="#!">NotSupported</a></li>
 	  <li class="divider"></li>
-	  <li onClick="getval(this)" value = "2"><a href="#!">Nucleo3</a></li>
+	  <li onClick="getval(this)" value = "2"><a href="#!">NotSupported</a></li>
 	</ul>
 
 	<div class="navbar-fixed">
@@ -205,11 +205,11 @@
 	<!-- alert (select_value); -->
 	
 	var boards = ["NUCLEO_F401RE","NUCLEO_F401RE", "NUCLEO_F401RE", "NUCLEO_F401RE"];
-	var boardsView = ["STM32F401","Board 2", "Board 3", "Board 4"];
+	var boardsView = ["STM32F401","NotSupported", "NotSupported", "NotSupported"];
 	var controlText = document.getElementById("dropdownID").innerHTML;
 	var icon = '<i class="material-icons right">arrow_drop_down</i>';
-
-
+	var boardselected;
+	
 	
 	
 	
@@ -234,13 +234,13 @@
 	
 		$(".dropdown-trigger").dropdown();
 	
-		$.post("saveBoardSelected",
-				{
-				board: boards[0]
-				},
-				function(data,status){
+		//$.post("saveBoardSelected", // COMMENTO MD, NON SERVE SALVARE DI NUOVO LA BOARD MD
+		//		{
+		//		board: boardselected
+		//		},
+		//		function(data,status){
 					<!-- alert("Data: " + data + "\nStatus: " + status); -->
-				});
+		//		});
 	
 		$("#buttonWrite").click(function(){
 		
@@ -267,9 +267,9 @@
 	
 	function getval(sel)
 	{
-		
+		boardselected = boards[sel.value];
 		document.getElementById("dropdownID").innerHTML = boardsView[sel.value]+ icon;
-		alert(boards[sel.value]);
+		alert(boardselected);
 		$.post("saveBoardSelected",
 				{
 				board: boards[sel.value]
@@ -277,6 +277,7 @@
 				function(data,status){
 					<!-- alert("Data: " + data + "\nStatus: " + status); -->
 				});
+		return boardselected;
 	}
 	
 	function setBoardLetter(text)

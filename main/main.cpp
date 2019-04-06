@@ -3,6 +3,6 @@
 
 
 int main() {
-  digital_LED1 = 1;
+  digital_LED1 = 0;
 
 }
