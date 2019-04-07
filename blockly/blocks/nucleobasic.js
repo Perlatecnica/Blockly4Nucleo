@@ -134,9 +134,29 @@ Blockly.defineBlocksWithJsonArray([
 	  "helpUrl": ""
 	},
 	
+	// Block wait in microseconds
+	{
+	  "type": "wait_microseconds",
+	  "message0": "wait [us]%1",
+	  "args0": [
+		{
+		  "type": "input_value",
+		  "name": "DELAY",
+		  "check": "Number",
+		  "align": "RIGHT"
+		}
+	  ],
+	  "previousStatement": null,
+	  "nextStatement": null,
+	  "colour": Blockly.Constants.Logic.HUE,
+	  "tooltip": "wait for a indicate milliseconds",
+	  "helpUrl": ""
+	},
+	
+	// Block wait in milliseconds
 	{
 	  "type": "wait_millisecnds",
-	  "message0": "wait %1",
+	  "message0": "wait [ms]%1",
 	  "args0": [
 		{
 		  "type": "input_value",
@@ -152,6 +172,7 @@ Blockly.defineBlocksWithJsonArray([
 	  "helpUrl": ""
 	},
 	
+	// Nucleo Blink LED1 - Currently not visible
 		{
 		  "type": "io_blinkled",
 		  "message0": "set blink led %1 for %2",

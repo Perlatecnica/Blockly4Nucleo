@@ -22,13 +22,6 @@ goog.require('Blockly.Nucleo');
  * @return {string} Completed code.
  */
  
-Blockly.Nucleo['wait_millisecnds'] = function(block) {
-  var value_seconds = Blockly.Nucleo.valueToCode(block, 'SECONDS', Blockly.Nucleo.ORDER_ATOMIC) || 0;
-  var code = '';
-  
-  code = 'wait ('+ value_seconds +');\n'
-  return code;
-}; 
 
 Blockly.Nucleo['io_digitalwrite'] = function(block) {
   var pin = block.getFieldValue('PIN');
