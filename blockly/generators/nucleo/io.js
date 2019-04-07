@@ -113,7 +113,8 @@ Blockly.Nucleo['io_digitalread'] = function(block) {
    
   Blockly.Nucleo.addSetup('io_' + pin, pinSetupCode, false);
 
-   var code =  varname + '.read('  + pin + ')\n';
+   //var code =  varname + '.read('  + pin + ')\n';
+   var code =  varname + '.read()';
   return [code, Blockly.Nucleo.ORDER_ATOMIC];
 };
 

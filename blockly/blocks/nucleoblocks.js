@@ -25,11 +25,11 @@
  * passed to defineBlocksWithJsonArray(..) must be strict JSON: double quotes
  * only, no outside references, no functions, no trailing commas, etc. The one
  * exception is end-of-line comments, which the scraper will remove.
- * @author q.neutron@gmail.com (Quynh Neutron)
+ * @author Perlatecnica
  */
 'use strict';
 
-goog.provide('Blockly.Blocks.nucleo');  // Deprecated
+goog.provide('Blockly.Blocks.Nucleo');  // Deprecated
 goog.provide('Blockly.Constants.Nucleo');
 
 goog.require('Blockly.Blocks');
@@ -241,7 +241,9 @@ Blockly.defineBlocksWithJsonArray([
 		  "colour": Blockly.Constants.Logic.HUE,
 		  "tooltip": "set the selected pin to blink for indicated milliseconds",
 		  "helpUrl": ""
-		},		
+		},
+	
+	// Block Nucleo START
 	{
 		"type": "Nucleo_start",
 		"message0": "Start",
@@ -249,5 +251,87 @@ Blockly.defineBlocksWithJsonArray([
 		"colour": 120,
 		"tooltip": "Nucleo starting point",
 		"helpUrl": ""
+	},
+	
+	// Block digital io reading
+   {
+    "type": "io_digitalread",
+    "message0": "read digital pin# %1",
+    "args0": [
+		{
+		  "type": "field_dropdown",
+		  "name": "PIN",
+		  "options": [
+			[
+			  "D0",
+			  "D0"
+			],
+			[
+			  "D1",
+			  "D1"
+			],
+			[
+			  "D2",
+			  "D2"
+			],
+			[
+			  "D3",
+			  "D3"
+			],
+			[
+			  "D4",
+			  "D4"
+			],
+			[
+			  "D5",
+			  "D5"
+			],
+			[
+			  "D6",
+			  "D6"
+			],
+			[
+			  "D7",
+			  "D7"
+			],
+			[
+			  "D8",
+			  "D8"
+			],
+			[
+			  "D9",
+			  "D9"
+			],
+			[
+			  "D10",
+			  "D10"
+			],
+			[
+			  "D11",
+			  "D11"
+			],
+			[
+			  "D12",
+			  "D12"
+			],
+			[
+			  "D13",
+			  "D13"
+			],
+			[
+			  "D14",
+			  "D14"
+			],
+			[
+			  "D15",
+			  "D15"
+			]
+		  ] // END OPTIONS
+		},
+    ], // END ARGS
+     "output": null,
+	 "colour": Blockly.Constants.Logic.HUE,
+	 "tooltip": "set selected digital pin in",
+	 "helpUrl": ""
 	}
 ]);  // END JSON EXTRACT (Do not delete this comment.)

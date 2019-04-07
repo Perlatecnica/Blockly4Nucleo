@@ -16,6 +16,7 @@ goog.require('Blockly.Generator');
 goog.require('Blockly.StaticTyping');
 
 
+
 /**
  * Nucleo code generator.
  * @type {!Blockly.Generator}
