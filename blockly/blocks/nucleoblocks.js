@@ -116,7 +116,7 @@ Blockly.defineBlocksWithJsonArray([
 			  "D15"
 			],
 			[
-			  "ledonboard",
+			  "LEDonBoard",
 			  "LED1"
 			]
 		  ]
@@ -241,5 +241,13 @@ Blockly.defineBlocksWithJsonArray([
 		  "colour": Blockly.Constants.Logic.HUE,
 		  "tooltip": "set the selected pin to blink for indicated milliseconds",
 		  "helpUrl": ""
-		}
+		},		
+	{
+		"type": "Nucleo_start",
+		"message0": "Start",
+		"nextStatement": null,
+		"colour": 120,
+		"tooltip": "Nucleo starting point",
+		"helpUrl": ""
+	}
 ]);  // END JSON EXTRACT (Do not delete this comment.)

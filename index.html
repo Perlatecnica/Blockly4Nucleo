@@ -117,6 +117,8 @@
         </footer>
 
   <xml id="toolbox" style="display: none">
+  
+	<!-- ******* LOGIC *******-->
     <category name="Logic" colour="%{BKY_LOGIC_HUE}">
       <category name="If" colour="%{BKY_LOGIC_HUE}">
         <block type="controls_if"></block>
@@ -136,6 +138,22 @@
         <block type="logic_ternary"></block>
       </category>
     </category>
+	
+	<!-- ******* MATH *******
+    <category name="Math" colour="%{BKY_MATH_HUE}">
+      <block type="math_number">
+        <field name="NUM">123</field>
+      </block>
+      <block type="math_arithmetic"></block>
+      <block type="math_single"></block>
+	  <block type="math_trig"></block>
+	  <block type="math_constant"></block>
+	  <block type="math_number_property"></block>
+	  <block type="math_change"></block>
+	  <block type="math_round"></block>	  
+    </category>-->
+	
+	<!-- ******* LOOPS *******-->
 	<category name="Loops" colour="%{BKY_LOOPS_HUE}">
       <block type="controls_repeat_ext">
         <value name="TIMES">
@@ -166,7 +184,11 @@
       <block type="controls_forEach"></block>
       <block type="controls_flow_statements"></block>
     </category>
+	
+	
+	<!-- ******* NUCLEO *******-->
 	<category name = "Nucleo" colour ="255">
+		<block type="Nucleo_start"></block>
 		<block type= "io_digitalwrite"> 
 			<value name = "stateOUT">
 				<block type="logic_boolean">
@@ -181,13 +203,16 @@
 			    </block>
 			</value>
 		</block>
+		
+		<!--
 		<block type = "io_blinkled">
 			<value name = "MilliSEC">
 				<block type="math_number">
 					<field name="NUM">1000</field>
 			    </block>
 			</value>
-		</block>
+		</block> -->
+		
 	</category>
 	
   </xml>
