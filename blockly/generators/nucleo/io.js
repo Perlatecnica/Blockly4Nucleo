@@ -53,10 +53,12 @@ Blockly.Nucleo['io_digitalwrite'] = function(block) {
  
   
   if (stateOutput == 'false')
-	code =   varname + ' = '+ 0 + ';\n';
+	code =  varname + '.write(0);\n';
+	//code =   varname + ' = '+ 0 + ';\n';
   
   else 
-	code =   varname + ' = '+ 1 + ';\n';
+	code =  varname + '.write(1);\n';
+	//code =   varname + ' = '+ 1 + ';\n';
   
   
   return code;
@@ -113,7 +115,6 @@ Blockly.Nucleo['io_digitalread'] = function(block) {
    
   Blockly.Nucleo.addSetup('io_' + pin, pinSetupCode, false);
 
-   //var code =  varname + '.read('  + pin + ')\n';
    var code =  varname + '.read()';
   return [code, Blockly.Nucleo.ORDER_ATOMIC];
 };
