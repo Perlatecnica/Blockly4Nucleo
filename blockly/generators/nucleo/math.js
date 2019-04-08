@@ -56,7 +56,8 @@ Blockly.Nucleo['math_arithmetic'] = function(block) {
   var code;
   // Power in C++ requires a special case since it has no operator.
   if (!operator) {
-    code = 'Math.pow(' + argument0 + ', ' + argument1 + ')';
+    //code = 'Math.pow(' + argument0 + ', ' + argument1 + ')';
+	code = argument0 + '^' + argument1;
     return [code, Blockly.Nucleo.ORDER_UNARY_POSTFIX];
   }
   code = argument0 + operator + argument1;
