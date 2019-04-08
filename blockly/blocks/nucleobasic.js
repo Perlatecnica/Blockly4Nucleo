@@ -134,6 +134,25 @@ Blockly.defineBlocksWithJsonArray([
 	  "helpUrl": ""
 	},
 	
+	// Block wait in seconds
+	{
+	  "type": "wait_seconds",
+	  "message0": "wait [s]%1",
+	  "args0": [
+		{
+		  "type": "input_value",
+		  "name": "SECONDS",
+		  "check": "Number",
+		  "align": "RIGHT"
+		}
+	  ],
+	  "previousStatement": null,
+	  "nextStatement": null,
+	  "colour": Blockly.Constants.Logic.HUE,
+	  "tooltip": "wait for seconds",
+	  "helpUrl": ""
+	},
+	
 	// Block wait in microseconds
 	{
 	  "type": "wait_microseconds",
@@ -149,7 +168,7 @@ Blockly.defineBlocksWithJsonArray([
 	  "previousStatement": null,
 	  "nextStatement": null,
 	  "colour": Blockly.Constants.Logic.HUE,
-	  "tooltip": "wait for a indicate milliseconds",
+	  "tooltip": "wait for microseconds",
 	  "helpUrl": ""
 	},
 	
@@ -168,7 +187,7 @@ Blockly.defineBlocksWithJsonArray([
 	  "previousStatement": null,
 	  "nextStatement": null,
 	  "colour": Blockly.Constants.Logic.HUE,
-	  "tooltip": "wait for a indicate milliseconds",
+	  "tooltip": "wait for milliseconds",
 	  "helpUrl": ""
 	},
 	

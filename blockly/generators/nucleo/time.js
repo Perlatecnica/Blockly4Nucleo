@@ -14,6 +14,19 @@ goog.provide('Blockly.Nucleo.time');
 goog.require('Blockly.Nucleo');
 
 /**
+ * Code generator for the delay in seconds Nucleo block.
+ * Nucleo code: loop { delay(X); }
+ * @param {!Blockly.Block} block Block to generate the code from.
+ * @return {string} Completed code.
+ */
+Blockly.Nucleo['wait_seconds'] = function(block) {
+  var value_seconds = Blockly.Nucleo.valueToCode(block, 'SECONDS', Blockly.Nucleo.ORDER_ATOMIC) || 0;
+  var code = 'wait('+ value_seconds +');\n'
+  return code;
+}; 
+
+
+/**
  * Code generator for the delay in milliseconds Nucleo block.
  * Nucleo code: loop { delay(X); }
  * @param {!Blockly.Block} block Block to generate the code from.
@@ -21,20 +34,20 @@ goog.require('Blockly.Nucleo');
  */
 Blockly.Nucleo['wait_millisecnds'] = function(block) {
   var value_seconds = Blockly.Nucleo.valueToCode(block, 'SECONDS', Blockly.Nucleo.ORDER_ATOMIC) || 0;
-  var code = 'wait_ms ('+ value_seconds +');\n'
+  var code = 'wait_ms('+ value_seconds +');\n'
   return code;
 }; 
 
 
 /**
- * Code generator for the delayMicroseconds block.
+ * Code generator for the delay in microseconds block.
  * Nucleo code: loop { delayMicroseconds(X); }
  * @param {!Blockly.Block} block Block to generate the code from.
  * @return {string} Completed code.
  */
  Blockly.Nucleo['wait_microseconds'] = function(block) {
  var value_seconds = Blockly.Nucleo.valueToCode(block, 'DELAY', Blockly.Nucleo.ORDER_ATOMIC) || 0;
-  var code = 'wait_us ('+ value_seconds +');\n'
+  var code = 'wait_us('+ value_seconds +');\n'
   return code;
 };
 
