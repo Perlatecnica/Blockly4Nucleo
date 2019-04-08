@@ -373,5 +373,47 @@ Blockly.defineBlocksWithJsonArray([
 	 "colour": Blockly.Constants.Logic.HUE,
 	 "tooltip": "set selected digital pin in",
 	 "helpUrl": ""
+	},
+	
+	// Block analog io reading
+   {
+    "type": "io_analogread",
+    "message0": "read analog pin# %1",
+    "args0": [
+		{
+		  "type": "field_dropdown",
+		  "name": "PIN",
+		  "options": [
+			[
+			  "A0",
+			  "A0"
+			],
+			[
+			  "A1",
+			  "A1"
+			],
+			[
+			  "A2",
+			  "A2"
+			],
+			[
+			  "A3",
+			  "A3"
+			],
+			[
+			  "A4",
+			  "A4"
+			],
+			[
+			  "A5",
+			  "A5"
+			]
+		  ] // END OPTIONS
+		},
+    ], // END ARGS
+     "output": null,
+	 "colour": Blockly.Constants.Logic.HUE,
+	 "tooltip": "set selected analog pin in",
+	 "helpUrl": ""
 	}
 ]);  // END JSON EXTRACT (Do not delete this comment.)
