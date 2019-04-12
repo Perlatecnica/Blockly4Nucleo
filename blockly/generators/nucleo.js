@@ -191,9 +191,12 @@ Blockly.Nucleo.finish = function(code) {
   var allDefs = includes.join('\n') + variables.join('\n') +
       definitions.join('\n') + functions.join('\n\n');
 	  
-  var setup = '#include "mbed.h" ' + setups.join('\n  ') + '\n\n\n';
+  //var setup = '#include "mbed.h" ' + setups.join('\n  ') + '\n\n\n';
+  //var setup = setups.join('\n  ') + '\n\n\n';
+  var setup = setups.join('\n  ')+ '\n\n';
   
   var loop = 'int main() {\n  ' + code.replace(/\n/g, '\n  ') + '\n}';
+  //var loop = code.replace(/\n/g, '\n  ');
   
   return allDefs + setup + loop;
 };

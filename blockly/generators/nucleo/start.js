@@ -15,6 +15,7 @@ goog.require('Blockly.Nucleo');
 
 
 Blockly.Nucleo['Nucleo_start'] = function(block) {
-  var code = '';
-  return code;
+	Blockly.Nucleo.addInclude('mbed', '#include "mbed.h"\n');
+	var code = '';
+	return code;
 };
